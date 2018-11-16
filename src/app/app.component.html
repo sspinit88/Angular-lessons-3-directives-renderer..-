@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <div class="block">
+                <h3 appBackground>
+                    {{headerText}}
+                </h3>
+                <h3 [appBg]="'yellow'"
+                    [defaultColor]="'transparent'"
+                >
+                    Еще один
+                </h3>
+            </div>
+            <h3 style="margin-top: 30px">Работа с ngSwitch</h3>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let item of items" (click)="onClick(item)">
+                    <b>{{item}}</b>
+                </li>
+            </ul>
+            <!--для того, что бы воспользоваться ngSwatch создаем корневой эл-т-->
+            <div [ngSwitch]="current">
+                <!--кейсы-->
+                <p *ngSwitchCase="1">В работе: 1</p>
+                <p *ngSwitchCase="2">В работе: 2</p>
+                <p *ngSwitchCase="3">В работе: 3</p>
+                <p *ngSwitchCase="4">В работе: 4</p>
+                <!--Для 5 будет выводиться 'Default'-->
+                <p *ngSwitchDefault>Default</p>
+            </div>
+        </div>
+    </div>
+</div>
